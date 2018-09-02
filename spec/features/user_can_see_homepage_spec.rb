@@ -22,6 +22,7 @@ describe 'as a user' do
       why = "Why is it important?"
       visit dashboard_index_path
 
+      save_and_open_page
       within('.what-is-it') do
         expect(page).to have_content(what)
       end
