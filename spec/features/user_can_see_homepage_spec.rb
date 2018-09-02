@@ -14,8 +14,20 @@ describe 'as a user' do
       within('.navbar') do
         expect(page).to have_link('Candidates')
         expect(page).to have_link('Activate Profile')
+        expect(page).to have_link('About')
       end
     end
-    
+    it 'should display the information sections of OpenSphere' do
+      what = "What is OpenSphere?"
+      why = "Why is it important?"
+      visit dashboard_index_path
+
+      within('.what-is-it') do
+        expect(page).to have_content(what)
+      end
+      within('.why-important') do
+        expect(page).to have_content(why)
+      end
+    end
   end
 end
