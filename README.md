@@ -31,8 +31,6 @@ Intro Section
    activated my account on the activation page. Once I have signed in to my account,
    I am able to see the vote button.
 
-
-
 sorted by the office (this is something that is not included in
    the database yet.)
 
