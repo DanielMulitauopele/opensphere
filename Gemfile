@@ -41,6 +41,8 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'database_cleaner'
+  gem 'bootstrap'
+  gem 'jquery-rails'
 end
 
 group :development do
