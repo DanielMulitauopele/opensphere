@@ -3,7 +3,7 @@
 <% @candidates.each do |candidate| %>
   <div class="candidate-section-<%= candidate.id %>">
     <ul>
-      <li><%= candidate.name %></li>
+      <%= link_to candidate.name, candidate_path(candidate)%>
       <button type="button" class="btn btn-info">Vote</button>
     </ul>
   </div>

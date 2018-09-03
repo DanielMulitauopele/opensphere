@@ -16,6 +16,7 @@ describe 'as a user' do
     it 'should display a vote button next to each candidate' do
       visit candidates_path
 
+      save_and_open_page
       within('.candidate-section-1') do
         expect(page).to have_content(@candidate1.name)
         expect(page).to have_button('Vote')
