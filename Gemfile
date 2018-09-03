@@ -44,6 +44,7 @@ group :development, :test do
   gem 'bootstrap'
   gem 'jquery-rails'
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
