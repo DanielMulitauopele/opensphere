@@ -1,7 +1,10 @@
-<header>All Candidates</header>
+<h1>All Candidates</h1>
 
 <% @candidates.each do |candidate| %>
-  <ul>
-    <li><%= candidate.name %></li>
-  </ul>
+  <div class="candidate-section-<%= candidate.id %>">
+    <ul>
+      <%= link_to candidate.name, candidate_path(candidate)%>
+      <button type="button" class="btn btn-info">Vote</button>
+    </ul>
+  </div>
 <% end %>
