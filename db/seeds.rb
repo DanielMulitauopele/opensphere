@@ -1,7 +1,7 @@
 require 'faker'
 
 20.times do
-  Candidate.create(
+  User.create(
     name: Faker::Name.unique.name
   )
 end
