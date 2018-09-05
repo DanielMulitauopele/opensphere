@@ -1,16 +1,20 @@
 @import "bootstrap";
+.marker {
+  font-family: 'Permanent Marker', cursive;}
 
 .header {
   max-width: 1500px;
   height: 400px;
   background-image: url('headers/header2edit.png');
-  background-size: contain;
+  background-size: cover;
 }
 .header-text {
-  text-align: center;
-  font-size: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  font-size: 90px;
+  top: 20%;
+  left: 20%;
+  transform: translate(-25%, -25%);
+  color: white;
 }
 
 .logo {

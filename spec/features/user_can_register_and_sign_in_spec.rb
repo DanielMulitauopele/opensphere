@@ -22,7 +22,7 @@ describe 'as a user' do
       voter = create(:voter)
       visit root_path
 
-      click_on "I already have an account"
+      click_on "I Already Have an Account"
 
       expect(current_path).to eq(login_path)
 
@@ -34,6 +34,22 @@ describe 'as a user' do
       expect(current_path).to eq(voter_path(voter))
       expect(page).to have_content("Welcome, #{voter.username}")
       expect(page).to have_content("Log Out")
+    end
+  end
+  describe 'logout' do
+    it 'allows voters to log out' do
+      voter = create(:voter, username: "greg", password: "greggreggreg")
+      visit login_path
+
+      fill_in :username, with: voter.username
+      fill_in :password, with: voter.password
+
+      click_on 'Log In'
+
+      expect(page).to_not have_content('I Already Have an Account')
+      click_on 'Log Out'
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content('I Already Have an Account')
     end
   end
 end
