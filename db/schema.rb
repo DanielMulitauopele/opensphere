@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180905001303) do
+ActiveRecord::Schema.define(version: 20180905010026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ballot_candidates", force: :cascade do |t|
+    t.bigint "ballot_id"
+    t.bigint "candidate_id"
+    t.index ["ballot_id"], name: "index_ballot_candidates_on_ballot_id"
+    t.index ["candidate_id"], name: "index_ballot_candidates_on_candidate_id"
+  end
+
+  create_table "ballots", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "candidates", force: :cascade do |t|
     t.string "office"
@@ -31,5 +44,18 @@ ActiveRecord::Schema.define(version: 20180905001303) do
     t.integer "role", default: 0
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.bigint "voter_id"
+    t.bigint "candidate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candidate_id"], name: "index_votes_on_candidate_id"
+    t.index ["voter_id"], name: "index_votes_on_voter_id"
+  end
+
+  add_foreign_key "ballot_candidates", "ballots"
+  add_foreign_key "ballot_candidates", "candidates"
   add_foreign_key "candidates", "voters"
+  add_foreign_key "votes", "candidates"
+  add_foreign_key "votes", "voters"
 end
