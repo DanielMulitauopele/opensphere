@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
   def current_voter
     @current_voter ||= Voter.find(session[:voter_id]) if session[:voter_id]
   end
+
+  def current_admin?
+    current_voter && current_voter.admin?
+  end
 end

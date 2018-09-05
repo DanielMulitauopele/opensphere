@@ -1,5 +1,4 @@
-class Admin::CandidatesController < ApplicationController
+class Admin::CandidatesController < Admin::BaseController
   def new
-    
   end
 end
