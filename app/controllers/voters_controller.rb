@@ -19,6 +19,6 @@ class VotersController < ApplicationController
   private
 
   def voter_params
-    params.require(:voter).permit(:username, :password)
+    params.require(:voter).permit(:name, :age, :ethnicity, :registered_party, :username, :password)
   end
 end
