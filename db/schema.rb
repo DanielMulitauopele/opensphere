@@ -10,13 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180902154654) do
+ActiveRecord::Schema.define(version: 20180905014606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "candidates", force: :cascade do |t|
+  create_table "ballot_candidates", force: :cascade do |t|
+    t.bigint "ballot_id"
+    t.bigint "candidate_id"
+    t.index ["ballot_id"], name: "index_ballot_candidates_on_ballot_id"
+    t.index ["candidate_id"], name: "index_ballot_candidates_on_candidate_id"
+  end
+
+  create_table "ballots", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "voter_id"
+    t.index ["voter_id"], name: "index_ballots_on_voter_id"
+  end
+
+  create_table "candidates", force: :cascade do |t|
+    t.string "office"
+    t.bigint "voter_id"
+    t.index ["voter_id"], name: "index_candidates_on_voter_id"
   end
 
   create_table "voters", force: :cascade do |t|
@@ -24,6 +41,24 @@ ActiveRecord::Schema.define(version: 20180902154654) do
     t.integer "age"
     t.string "ethnicity"
     t.string "registered_party"
+    t.string "username"
+    t.string "password_digest"
+    t.integer "role", default: 0
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.bigint "voter_id"
+    t.bigint "candidate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candidate_id"], name: "index_votes_on_candidate_id"
+    t.index ["voter_id"], name: "index_votes_on_voter_id"
+  end
+
+  add_foreign_key "ballot_candidates", "ballots"
+  add_foreign_key "ballot_candidates", "candidates"
+  add_foreign_key "ballots", "voters"
+  add_foreign_key "candidates", "voters"
+  add_foreign_key "votes", "candidates"
+  add_foreign_key "votes", "voters"
 end
