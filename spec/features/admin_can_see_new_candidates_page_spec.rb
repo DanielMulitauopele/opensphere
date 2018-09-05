@@ -28,7 +28,7 @@ describe "Voter visits candidates new page" do
       visit new_admin_candidate_path
 
       expect(page).to_not have_content("Add New Candidate")
-      expect(page).to have_content("The page you were looking for doesn't exist.")
+      expect(page).to have_content("These are not the droids you're looking for.")
     end
   end
 end
