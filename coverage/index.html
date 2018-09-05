@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-05T07:27:26-06:00">2018-09-05T07:27:26-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-05T08:06:04-06:00">2018-09-05T08:06:04-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.38%</span></span>
+    (<span class="covered_percent"><span class="green">98.84%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.18
+         1.27
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>23</b> files in total.
-    <b>162</b> relevant lines. 
-    <span class="green"><b>161</b> lines covered</span> and
-    <span class="red"><b>1</b> lines missed </span>
+    <b>24</b> files in total.
+    <b>173</b> relevant lines. 
+    <span class="green"><b>171</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -73,11 +73,11 @@
       <tr>
         <td class="strong"><a href="#326223d966a3b414e01cdc0101b4edf41d858c06" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>3</td>
-        <td>2</td>
-        <td>2</td>
+        <td>8</td>
+        <td>5</td>
+        <td>5</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>4.8</td>
       </tr>
       
       <tr>
@@ -98,6 +98,16 @@
         <td>2</td>
         <td>0</td>
         <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#028e7e2027b12464160019485f620a1ddf115a83" class="src_link" title="app/controllers/sessions_controller.rb">app/controllers/sessions_controller.rb</a></td>
+        <td class="yellow strong">87.5 %</td>
+        <td>15</td>
+        <td>8</td>
+        <td>7</td>
+        <td>1</td>
+        <td>0.9</td>
       </tr>
       
       <tr>
@@ -399,8 +409,8 @@
     <h3>app/controllers/application_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -420,7 +430,37 @@
           <code class="ruby">  protect_from_forgery with: :exception</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  helper_method :current_voter</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def current_voter</code>
+        </li>
+      
+        <li class="covered" data-hits="20" data-linenumber="6">
+          <span class="hits">20</span>
+          
+          <code class="ruby">    @current_voter ||= Voter.find(session[:voter_id]) if session[:voter_id]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">end</code>
@@ -553,6 +593,115 @@
 </div>
 
       
+        <div class="source_table" id="028e7e2027b12464160019485f620a1ddf115a83">
+  <div class="header">
+    <h3>app/controllers/sessions_controller.rb</h3>
+    <h4><span class="yellow">87.5 %</span> covered</h4>
+    <div>
+      <b>8</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class SessionsController &lt; ApplicationController</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def create</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    voter = Voter.find_by(username: params[:username])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    if voter &amp;&amp; voter.authenticate(params[:password])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      session[:voter_id] = voter.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      redirect_to voter_path(voter)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">      render :new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="bd7c735bdf722d8792f57bb115101d3c11f2e823">
   <div class="header">
     <h3>app/controllers/voters_controller.rb</h3>
@@ -603,40 +752,40 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @voter = Voter.find(params[:id])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">    @voter = Voter.new(voter_params)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">    if @voter.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      session[:voter_id] = @voter.id</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">

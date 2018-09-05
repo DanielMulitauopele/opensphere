@@ -4,12 +4,12 @@ class VotersController < ApplicationController
   end
 
   def show
-    @voter = Voter.find(params[:id])
   end
 
   def create
     @voter = Voter.new(voter_params)
     if @voter.save
+      session[:voter_id] = @voter.id
       redirect_to voter_path(@voter)
     else
       render :new
