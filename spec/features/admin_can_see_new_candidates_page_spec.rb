@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Voter visits candidates new page" do
   context "as admin" do
-    it "allows admin to create new candidates" do
+    it "allows admin to see new candidates page" do
 	   admin = create(:voter,
        username: "penelope",
        password: "boom",
