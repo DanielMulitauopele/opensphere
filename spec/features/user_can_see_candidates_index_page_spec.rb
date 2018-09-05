@@ -15,18 +15,7 @@ describe 'as a user' do
       expect(page).to have_link(@candidate1.voter.name)
       expect(page).to have_link(@candidate2.voter.name)
     end
-    it 'should display a vote button next to each candidate' do
-      visit candidates_path
-
-      within('.candidate-section-1') do
-        expect(page).to have_link(@candidate1.voter.name)
-        expect(page).to have_button('Vote')
-      end
-      within('.candidate-section-2') do
-        expect(page).to have_link(@candidate2.voter.name)
-        expect(page).to have_button('Vote')
-      end
-    end
+    
     it 'should take user to show page after clicking on candidate' do
       visit candidates_path
 
