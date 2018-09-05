@@ -1,0 +1,15 @@
+<%= form_for @voter do |f|  %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <%= f.label :ethnicity %>
+  <%= f.text_field :ethnicity %>
+  <%= f.label :registered_party %>
+  <%= f.password_field :registered_party %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.submit %>
+<% end %>

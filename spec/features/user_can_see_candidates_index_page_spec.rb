@@ -4,7 +4,7 @@ describe 'as a user' do
   describe 'visiting the candidates index page' do
     before (:each) do
       @voter1 = create(:voter, id: 20)
-      @voter2 = create(:voter, id: 21, name: "Jenny Jacobs")
+      @voter2 = create(:voter, id: 21, name: "Jenny Jacobs", username: "JMoney")
       @candidate1 = create(:candidate, id: 1, voter_id: 20)
       @candidate2 = create(:candidate, id: 2, voter_id: 21, office: "Governor")
     end

@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:index]
   resources :activate, only: [:index]
   resources :about, only: [:index]
-  resources :voters, only: [:new]
+  resources :voters, only: [:new, :create, :show]
   resources :candidates, only: [:index, :show]
 end

@@ -5,6 +5,6 @@ FactoryBot.define do
     ethnicity "Samoan"
     registered_party "Independent"
     username "DannyEms"
-    password_digest "iheartchicken"
+    password "iheartchicken"
   end
 end
