@@ -6,7 +6,7 @@ describe 'as a user' do
       @voter1 = create(:voter, id: 20)
       @voter2 = create(:voter, id: 21, name: "Jenny Jacobs", username: "JMoney")
       @candidate1 = create(:candidate, id: 1, voter_id: 20)
-      @candidate2 = create(:candidate, id: 2, voter_id: 21, office: "Governor")
+      @candidate2 = create(:candidate, id: 2, voter_id: 21)
     end
     it 'should display all candidates on the page' do
       visit candidates_path

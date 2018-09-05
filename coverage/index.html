@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-05T13:49:04-06:00">2018-09-05T13:49:04-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-05T14:40:28-06:00">2018-09-05T14:40:28-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.14%</span></span>
+    (<span class="covered_percent"><span class="green">99.13%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>27</b> files in total.
-    <b>233</b> relevant lines. 
-    <span class="green"><b>231</b> lines covered</span> and
+    <b>230</b> relevant lines. 
+    <span class="green"><b>228</b> lines covered</span> and
     <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -173,9 +173,9 @@
       <tr>
         <td class="strong"><a href="#7a109de554b866cbe57a558407ed014b45b74105" class="src_link" title="app/models/candidate.rb">app/models/candidate.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>6</td>
         <td>5</td>
-        <td>5</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -283,9 +283,9 @@
       <tr>
         <td class="strong"><a href="#19a351248aa31aacc01ff9f4ec6b57921c475793" class="src_link" title="spec/models/candidate_spec.rb">spec/models/candidate_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>10</td>
-        <td>6</td>
-        <td>6</td>
+        <td>7</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.3</td>
       </tr>
@@ -1193,8 +1193,8 @@
     <h3>app/models/candidate.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1211,28 +1211,22 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_presence_of :office</code>
+          <code class="ruby">  belongs_to :voter</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  belongs_to :voter</code>
+          <code class="ruby">  has_many :ballot_candidates</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :ballot_candidates</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
           <code class="ruby">  has_many :ballots, through: :ballot_candidates</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">end</code>
@@ -1912,7 +1906,7 @@
         <li class="covered" data-hits="2" data-linenumber="9">
           <span class="hits">2</span>
           
-          <code class="ruby">      @candidate2 = create(:candidate, id: 2, voter_id: 21, office: &quot;Governor&quot;)</code>
+          <code class="ruby">      @candidate2 = create(:candidate, id: 2, voter_id: 21)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -1960,7 +1954,7 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">      disclaimer = &quot;#{@candidate2.voter.name} is running for the position of #{@candidate2.office}. Do you want to vote for this candidate?&quot;</code>
+          <code class="ruby">      disclaimer = &quot;#{@candidate2.voter.name} is running for the position of Governor. Do you want to vote for this candidate?&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
@@ -2075,7 +2069,7 @@
         <li class="covered" data-hits="3" data-linenumber="9">
           <span class="hits">3</span>
           
-          <code class="ruby">      @candidate2 = create(:candidate, id: 2, voter_id: 21, office: &quot;Governor&quot;)</code>
+          <code class="ruby">      @candidate2 = create(:candidate, id: 2, voter_id: 21)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -2704,8 +2698,8 @@
     <h3>spec/models/candidate_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2734,13 +2728,13 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;validations&#39; do</code>
+          <code class="ruby">  describe &#39;relationships&#39; do</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">    it {should validate_presence_of(:office)}</code>
+          <code class="ruby">    it {should belong_to(:voter)}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -2749,25 +2743,7 @@
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &#39;relationships&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="8">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    it {should belong_to(:voter)}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>
