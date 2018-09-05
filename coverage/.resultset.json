@@ -130,6 +130,9 @@
         1,
         2,
         null,
+        1,
+        2,
+        null,
         null
       ],
       "/Users/danielmulitauopele/Turing/2module/projects/opensphere/app/models/candidate.rb": [
@@ -143,6 +146,20 @@
         1,
         null
       ],
+      "/Users/danielmulitauopele/Turing/2module/projects/opensphere/spec/models/vote_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/danielmulitauopele/Turing/2module/projects/opensphere/app/models/vote.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/danielmulitauopele/Turing/2module/projects/opensphere/spec/models/voter_spec.rb": [
         1,
         null,
@@ -152,10 +169,27 @@
         2,
         2,
         2,
+        2,
+        null,
+        1,
+        2,
         null,
         null
       ],
       "/Users/danielmulitauopele/Turing/2module/projects/opensphere/app/models/voter.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/danielmulitauopele/Turing/2module/projects/opensphere/app/controllers/dashboard_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/danielmulitauopele/Turing/2module/projects/opensphere/app/controllers/application_controller.rb": [
         1,
         1,
         null
@@ -171,9 +205,11 @@
         null,
         null
       ],
-      "/Users/danielmulitauopele/Turing/2module/projects/opensphere/app/controllers/application_controller.rb": [
+      "/Users/danielmulitauopele/Turing/2module/projects/opensphere/app/controllers/activate_controller.rb": [
         1,
         1,
+        null,
+        null,
         null
       ],
       "/Users/danielmulitauopele/Turing/2module/projects/opensphere/app/controllers/about_controller.rb": [
@@ -182,22 +218,8 @@
         null,
         null,
         null
-      ],
-      "/Users/danielmulitauopele/Turing/2module/projects/opensphere/app/controllers/activate_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/danielmulitauopele/Turing/2module/projects/opensphere/app/controllers/dashboard_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        null
       ]
     },
-    "timestamp": 1536108849
+    "timestamp": 1536110017
   }
 }
