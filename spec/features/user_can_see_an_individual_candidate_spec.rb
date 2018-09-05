@@ -14,7 +14,7 @@ describe 'as a user' do
       expect(page).to have_content(@candidate2.voter.name)
     end
     it 'should display the disclaimer before the vote button' do
-      disclaimer = "#{@candidate2.voter.name} is running for the position of Governor. Do you want to vote for this candidate?"
+      disclaimer = "#{@candidate2.voter.name} is running for a position in Government. Do you want to vote for this candidate?"
       visit candidate_path(@candidate2)
 
       expect(page).to have_content(disclaimer)

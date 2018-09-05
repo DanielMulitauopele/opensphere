@@ -13,8 +13,9 @@ describe 'as a user' do
 
       within('.navbar') do
         expect(page).to have_link('Candidates')
-        expect(page).to have_link('Activate Profile')
         expect(page).to have_link('About')
+        expect(page).to have_link('Sign Up to Vote!')
+        expect(page).to have_link('I Already Have an Account')
       end
     end
     it 'should display the information sections of OpenSphere' do
