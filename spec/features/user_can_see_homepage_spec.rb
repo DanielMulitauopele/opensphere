@@ -18,16 +18,12 @@ describe 'as a user' do
         expect(page).to have_link('I Already Have an Account')
       end
     end
-    it 'should display the information sections of OpenSphere' do
-      what = "What is OpenSphere?"
-      why = "Why is it important?"
+    it 'should display the about information' do
+      welcome = 'Welcome to OpenSphere'
       visit dashboard_index_path
 
-      within('.what-is-it') do
-        expect(page).to have_content(what)
-      end
-      within('.why-important') do
-        expect(page).to have_content(why)
+      within('h2') do
+        expect(page).to have_content(welcome)
       end
     end
   end

@@ -1,0 +1,11 @@
+<h2>My Ballot</h2>
+
+<p>Select an Election</p>
+
+<% @ballots.each do |ballot| %>
+  <ul>
+    <li>
+      <%= link_to "#{ballot.name}", new_ballot_vote_path(ballot) %>
+    </li>
+  </ul>
+<% end %>
