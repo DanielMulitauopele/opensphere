@@ -1,5 +1,3 @@
-require 'faker'
-
 @voter1 = Voter.create(name: "Bill", age: 25, ethnicity: "Irish", registered_party: "Democrat", username: "Bill123", password: "123bill", role: 0)
 @voter2 = Voter.create(name: "Bob", age: 26, ethnicity: "Samoan", registered_party: "Republican", username: "Bob123", password: "123bob", role: 0)
 @voter3 = Voter.create(name: "Dan Richards", age: 27, ethnicity: "Irish", registered_party: "Independent", username: "Dan123", password: "123dan", role: 0)
