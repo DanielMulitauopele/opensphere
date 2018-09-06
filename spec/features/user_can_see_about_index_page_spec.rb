@@ -9,11 +9,16 @@ describe 'as a user' do
         expect(page).to have_content('About')
       end
     end
-    it 'should display the about information' do
+    it 'should display the information sections of OpenSphere' do
+      what = "What is OpenSphere?"
+      why = "Why is it important?"
       visit about_index_path
 
-      within('p') do
-        expect(page).to have_content('Daniel Mulitauopele')
+      within('.what-is-it') do
+        expect(page).to have_content(what)
+      end
+      within('.why-important') do
+        expect(page).to have_content(why)
       end
     end
   end

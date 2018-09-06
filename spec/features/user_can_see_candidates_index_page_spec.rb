@@ -3,10 +3,14 @@ require 'rails_helper'
 describe 'as a user' do
   describe 'visiting the candidates index page' do
     before (:each) do
-      @voter1 = create(:voter, id: 20)
-      @voter2 = create(:voter, id: 21, name: "Jenny Jacobs", username: "JMoney")
-      @candidate1 = create(:candidate, id: 1, voter_id: 20)
-      @candidate2 = create(:candidate, id: 2, voter_id: 21, office: "Governor")
+      @voter1 = Voter.create(id: 20, name: "David Blaine", age: 70, ethnicity: "Samoan", registered_party: "Independent", username: "DeanMartin", password: "iheartchicken")
+      @voter2 = Voter.create(id: 21, name: "Jenny Jacobs", age: 45, ethnicity: "Irish", registered_party: "Democrat", username: "JMoney", password: "snkdcsd")
+      @candidate1 = Candidate.create(id: 1, voter_id: 20)
+      @candidate2 = Candidate.create(id: 2, voter_id: 21)
+
+      @ballot1 = Ballot.create(id: 1, name: "Colorado State Senate Election", office: "Senator")
+      @ballotcandidate1 = BallotCandidate.create(ballot_id: 1, candidate_id: 1)
+      @ballotcandidate2 = BallotCandidate.create(ballot_id: 1, candidate_id: 2)
     end
     it 'should display all candidates on the page' do
       visit candidates_path
@@ -15,18 +19,7 @@ describe 'as a user' do
       expect(page).to have_link(@candidate1.voter.name)
       expect(page).to have_link(@candidate2.voter.name)
     end
-    it 'should display a vote button next to each candidate' do
-      visit candidates_path
 
-      within('.candidate-section-1') do
-        expect(page).to have_link(@candidate1.voter.name)
-        expect(page).to have_button('Vote')
-      end
-      within('.candidate-section-2') do
-        expect(page).to have_link(@candidate2.voter.name)
-        expect(page).to have_button('Vote')
-      end
-    end
     it 'should take user to show page after clicking on candidate' do
       visit candidates_path
 

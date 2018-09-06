@@ -14,21 +14,30 @@
       <%= link_to "Paper is for suckers.", dashboard_index_path, class: "header-text marker" %>
     </header>
     <% if current_voter.nil? %>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top logged-out">
         <%= image_tag("logos/LOGOdrop.png", class: "logo d-inline-block align-top") %>
         <a href="/dashboard">OpenSphere</a>
         <a class="nav-link" href="/candidates">Candidates</a>
-        <a class="nav-link" href="/activate">Activate Profile</a>
         <a class="nav-link" href="about">About</a>
         <a class="nav-link" href=<%= new_voter_path %>>Sign Up to Vote!</a>
         <a class="nav-link" href=<%= login_path %>>I Already Have an Account</a>
       </nav>
-    <% else %>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <% elsif current_voter.admin? %>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top admin">
         <%= image_tag("logos/LOGOdrop.png", class: "logo d-inline-block align-top") %>
         <a href="/dashboard">OpenSphere</a>
         <a class="nav-link" href="/candidates">Candidates</a>
-        <a class="nav-link" href="/activate">Activate Profile</a>
+        <a class="nav-link" href=<%= new_admin_candidate_path %>>Add New Candidate</a>
+        <a class="nav-link" href="/ballots">My Ballot</a>
+        <a class="nav-link" href="about">About</a>
+        <a class="nav-link" href=<%= logout_path %>>Log Out</a>
+      </nav>
+    <% else %>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top logged-in">
+        <%= image_tag("logos/LOGOdrop.png", class: "logo d-inline-block align-top") %>
+        <a href="/dashboard">OpenSphere</a>
+        <a class="nav-link" href="/candidates">Candidates</a>
+        <a class="nav-link" href="/ballots">My Ballot</a>
         <a class="nav-link" href="about">About</a>
         <a class="nav-link" href=<%= logout_path %>>Log Out</a>
       </nav>

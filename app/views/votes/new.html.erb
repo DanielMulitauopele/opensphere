@@ -1,0 +1,13 @@
+<h2>Choose Your Candidate</h2>
+
+<%= form_tag new_ballot_vote_path(@ballot) do %>
+  <ul>
+    <% @ballotcandidates.each do |candidate| %>
+      <li class="<%= candidate.candidate.voter.name %>-tag">
+        <%= label_tag candidate.candidate.voter.name %>
+        <%= radio_button_tag(candidate.candidate.voter.name, candidate) %>
+        <%= submit_tag "Vote" %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

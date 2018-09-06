@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :voter do
-    name "Daniel Muli"
-    age 30
+    name "David Blaine"
+    age 70
     ethnicity "Samoan"
     registered_party "Independent"
-    username "DannyEms"
+    username "DeanMartin"
     password "iheartchicken"
   end
 end

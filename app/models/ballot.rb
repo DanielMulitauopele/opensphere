@@ -1,5 +1,5 @@
 class Ballot < ApplicationRecord
-  belongs_to :voter
+  validates_presence_of :office
   has_many :ballot_candidates
   has_many :candidates, through: :ballot_candidates
 end
